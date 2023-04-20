@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../favorites_view.dart';
 import '../shelf_view.dart';
 
-class DrawerMenu extends StatelessWidget {
-  const DrawerMenu({Key? key}) : super(key: key);
+class PixelShelfDrawer extends StatelessWidget {
+  const PixelShelfDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -12,7 +12,7 @@ class FavoritesView extends StatelessWidget {
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: PixelShelfAppBar(title: 'Favorites'),
       ),
-      drawer: const DrawerMenu(),
+      drawer: const PixelShelfDrawer(),
       body: Container(color: Colors.green.shade50),
     );
   }

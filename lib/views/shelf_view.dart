@@ -12,7 +12,7 @@ class ShelfView extends StatelessWidget {
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: PixelShelfAppBar(title: 'Shelf'),
       ),
-      drawer: const DrawerMenu(),
+      drawer: const PixelShelfDrawer(),
       body: Container(color: Colors.green.shade50),
     );
   }
