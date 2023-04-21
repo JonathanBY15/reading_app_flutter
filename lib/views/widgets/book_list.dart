@@ -21,14 +21,31 @@ class BookList extends StatelessWidget {
               ),
               const SizedBox(width: 0),
               Expanded(
-                child: SizedBox(
-                  height: 170,
-                  child: ListTile(
-                    tileColor: Colors.green.shade100,
-                    title: Text('Book $index'),
-                    subtitle: Text('Author $index'),
-                    trailing: const Icon(Icons.more_vert),
-                  ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 85,
+                      child: ListTile(
+                        tileColor: Colors.green.shade100,
+                        title: Text('Book $index'),
+                        subtitle: Text('Author $index'),
+                        trailing: const Icon(
+                          Icons.favorite_border,
+                          color: Color.fromARGB(255, 30, 109, 47),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 85,
+                      child: ListTile(
+                        tileColor: Colors.green.shade100,
+                        trailing: const Icon(
+                          Icons.more_vert,
+                          color: Color.fromARGB(255, 30, 109, 47),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
