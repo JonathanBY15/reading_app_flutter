@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../book_info_view.dart';
+import '../book_view.dart';
 
 class BookList extends StatelessWidget {
   const BookList({super.key});
@@ -13,39 +15,60 @@ class BookList extends StatelessWidget {
           height: 170,
           child: Row(
             children: [
-              Image.asset(
-                'images/book_$index.png',
-                height: 170,
-                width: 100,
-                fit: BoxFit.cover,
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => BookInfoView(
+                        index: index,
+                      ),
+                    ),
+                  );
+                },
+                child: Image.asset(
+                  'images/book_$index.png',
+                  height: 170,
+                  width: 100,
+                  fit: BoxFit.cover,
+                ),
               ),
               const SizedBox(width: 0),
               Expanded(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 85,
-                      child: ListTile(
-                        tileColor: Colors.green.shade100,
-                        title: Text('Book $index'),
-                        subtitle: Text('Author $index'),
-                        trailing: const Icon(
-                          Icons.favorite_border,
-                          color: Color.fromARGB(255, 30, 109, 47),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BookView(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 85,
+                        child: ListTile(
+                          tileColor: Colors.green.shade100,
+                          title: Text('Book $index'),
+                          subtitle: Text('Author $index'),
+                          trailing: const Icon(
+                            Icons.favorite_border,
+                            color: Color.fromARGB(255, 30, 109, 47),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 85,
-                      child: ListTile(
-                        tileColor: Colors.green.shade100,
-                        trailing: const Icon(
-                          Icons.more_vert,
-                          color: Color.fromARGB(255, 30, 109, 47),
+                      SizedBox(
+                        height: 85,
+                        child: ListTile(
+                          tileColor: Colors.green.shade100,
+                          trailing: const Icon(
+                            Icons.more_vert,
+                            color: Color.fromARGB(255, 30, 109, 47),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
