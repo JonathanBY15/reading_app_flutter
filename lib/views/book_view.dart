@@ -1,16 +1,22 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class BookView extends StatelessWidget {
-  const BookView({Key? key}) : super(key: key);
+String file = 'Outliers.pdf';
+
+class BookListView extends StatelessWidget {
+  const BookListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Book View'),
-      ),
-      body: const Center(
-        child: Text('Book View'),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Book List'),
+        ),
+        body: SfPdfViewer.file(
+          File('/storage/emulated/0/Download/$file'),
+        ),
       ),
     );
   }
