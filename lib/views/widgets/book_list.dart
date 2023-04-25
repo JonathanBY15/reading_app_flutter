@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:reading_app_flutter/views/book_view.dart';
 import '../book_info_view.dart';
 
-
 class BookList extends StatelessWidget {
   const BookList({super.key});
 
@@ -40,7 +39,7 @@ class BookList extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const BookListView(),
+                        builder: (context) => const PdfListView(),
                       ),
                     );
                   },
