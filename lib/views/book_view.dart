@@ -32,9 +32,12 @@ class PdfListView extends StatelessWidget {
       appBar: AppBar(
         title: const Text('PDF List'),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
         padding: const EdgeInsets.all(5),
         itemCount: pdfFiles.length,
+        separatorBuilder: (BuildContext context, int index) {
+          return const Divider(height: 1);
+        },
         itemBuilder: (BuildContext context, int index) {
           return SizedBox(
             height: 170,
@@ -56,7 +59,7 @@ class PdfListView extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                const SizedBox(width: 5),
+                const SizedBox(width: 0),
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
@@ -70,9 +73,9 @@ class PdfListView extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 80,
+                          height: 85,
                           child: ListTile(
-                            tileColor: Colors.green.shade50,
+                            tileColor: Colors.green.shade100,
                             contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                             title: Text(
                               pdfFiles[index].path.split('/').last,
@@ -83,7 +86,7 @@ class PdfListView extends StatelessWidget {
                               style: const TextStyle(fontSize: 14),
                             ),
                             trailing: const Icon(
-                              Icons.arrow_forward_ios_rounded,
+                              Icons.favorite_border,
                               color: Color.fromARGB(255, 30, 109, 47),
                             ),
                           ),
@@ -91,7 +94,7 @@ class PdfListView extends StatelessWidget {
                         SizedBox(
                           height: 85,
                           child: ListTile(
-                            tileColor: Colors.green.shade50,
+                            tileColor: Colors.green.shade100,
                             contentPadding: const EdgeInsets.symmetric(horizontal: 10),
                             trailing: const Icon(
                               Icons.more_vert,
