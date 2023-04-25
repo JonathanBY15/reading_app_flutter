@@ -52,11 +52,10 @@ class PdfListView extends StatelessWidget {
                       ),
                     );
                   },
-                  child: Image.asset(
-                    'images/book_$index.png',
-                    height: 170,
-                    width: 100,
-                    fit: BoxFit.cover,
+                  child: Icon(
+                    Icons.picture_as_pdf,
+                    size: 100,
+                    color: Colors.red.shade300,
                   ),
                 ),
                 const SizedBox(width: 0),
